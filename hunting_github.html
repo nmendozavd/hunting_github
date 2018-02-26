@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hunting Github</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script>
+    $(document).ready(
+      function(){
+        $('button').click(function(){
+          $.get("https://api.github.com/users/nmendozavd", displayName);
+        });
+        function displayName(data) {
+          if(data.name){
+            $('body').append("<p>"+data.name+"</p>")
+          }
+        }
+      }
+    );
+
+    </script>
+    </head>
+    <body>
+      <button>Click Me</button>
+  </body>
+</html>
